@@ -35,7 +35,7 @@ const bestResult = await BayesianOptimizer({
 	seed: 123,
 
 	// 调试模式 (打印日志)
-	debug: true,
+	debug: false,
 });
 
 console.log(`Best result:`, bestResult);

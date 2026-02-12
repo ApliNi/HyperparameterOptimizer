@@ -2,6 +2,7 @@ import { BayesianOptimizer as BayesianOptimizer_v1 } from "./BayesianOptimizer_v
 import { BayesianOptimizer as BayesianOptimizer_v2 } from "./BayesianOptimizer_v2.js";
 import { BayesianOptimizer as BayesianOptimizer_v3 } from "./BayesianOptimizer_v3.js";
 import { BayesianOptimizer as BayesianOptimizer_v4 } from "./BayesianOptimizer_v4.js";
+import { BayesianOptimizer as BayesianOptimizer_v5 } from "./BayesianOptimizer_v5.js";
 import { GeneticOptimizer as GeneticOptimizer_v1 } from "./GeneticOptimizer_v1.js";
 
 // 测试配置
@@ -73,7 +74,8 @@ const testBayesianOptimizerBest = async () => {
     // results.push(await testVersion('v2', BayesianOptimizer_v2, testConfig));
     // results.push(await testVersion('v3', BayesianOptimizer_v3, testConfig));
     results.push(await testVersion('v4b', BayesianOptimizer_v4, testConfig));
-	results.push(await testVersion('v1g', GeneticOptimizer_v1, testConfig));
+    results.push(await testVersion('v5h', BayesianOptimizer_v5, testConfig));
+ results.push(await testVersion('v1g', GeneticOptimizer_v1, testConfig));
     
     // 分析结果
     console.log('\n=== 测试结果汇总 ===');
