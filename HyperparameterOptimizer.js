@@ -129,7 +129,8 @@ export default class HyperparameterOptimizer {
 	 * @param {number} [options.seed=Math.random()]	- 随机数种子, 用于结果复现
 	 * @param {Object|null} [options.cache=null]	- 状态快照 (通过 .save() 导出), 用于恢复进度
 	 * @returns {Promise<void>}
-	 */	async optimize(objective, { n = 100, seed = Math.random(), cache = null } = {}) {
+	 */
+	async optimize(objective, { n = 100, seed = Math.random(), cache = null } = {}) {
 		// 1. 恢复缓存（如果提供）
 		if (cache) {
 			for (const key in cache) {

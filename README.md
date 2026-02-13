@@ -7,6 +7,7 @@ import HyperparameterOptimizer from './HyperparameterOptimizer.js';
 
 // 目标函数
 const objective = (trial) => {
+	// 设定参数及搜索空间
 	const x = trial.suggest_float('x', -10, 10);
 	return Math.pow(x - 2, 2);
 };
@@ -14,6 +15,8 @@ const objective = (trial) => {
 // 运行测试
 const study = new HyperparameterOptimizer();
 await study.optimize(objective);
+
+// 得到结果
 console.log('best_params:', study.best_params);
 console.log('best_loss:', study.best_loss);
 ```
@@ -39,10 +42,10 @@ await study.optimize(objective, {
 console.log('best_params:', study.best_params);
 console.log('best_loss:', study.best_loss);
 
-// 保存数据
+// 保存状态数据
 const cache = study.save();
 
-// 恢复数据继续测试
+// 恢复状态数据继续测试
 const study_2 = new HyperparameterOptimizer();
 await study_2.optimize(objective, {
 	n: 100,
